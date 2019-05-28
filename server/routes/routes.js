@@ -4,4 +4,8 @@ module.exports = (app) => {
       res.render('home');
    });
 
+   app.get('/contact', (req, res, next) => {
+      res.render('contact');
+   });
+
 };
