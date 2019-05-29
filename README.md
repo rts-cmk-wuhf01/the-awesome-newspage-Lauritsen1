@@ -1,3 +1,5 @@
+Rasmus Lauritsen
+
 # The Awesome Newspage
 
 ## Installation
