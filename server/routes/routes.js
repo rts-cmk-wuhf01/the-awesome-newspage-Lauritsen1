@@ -1,7 +1,18 @@
 module.exports = (app) => {
 
+   let headings = [
+      {
+         "name": "FINANCE"
+      },
+      {
+         "name": "POLITICS"
+      }
+   ]
+
    app.get('/', (req, res, next) => {
-      res.render('home');
+      res.render('home', {
+         "titles": headings
+      });
    });
 
    app.get('/catagories', (req, res, next) => {
