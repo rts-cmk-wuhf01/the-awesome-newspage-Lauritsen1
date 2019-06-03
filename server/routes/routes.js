@@ -6,6 +6,18 @@ module.exports = (app) => {
       },
       {
          "name": "POLITICS"
+      },
+      {
+         "name": "HEALTH"
+      },
+      {
+         "name": "FINANCE"
+      },
+      {
+         "name": "TRAVEL"
+      },
+      {
+         "name": "POLITICS"
       }
    ]
 
@@ -16,19 +28,27 @@ module.exports = (app) => {
    });
 
    app.get('/catagories', (req, res, next) => {
-      res.render('catagories-post');
+      res.render('catagories-post', {
+         "titles": headings
+      });
    });
 
    app.get('/single-post', (req, res, next) => {
-      res.render('single-post');
+      res.render('single-post', {
+         "titles": headings
+      });
    });
 
    app.get('/about', (req, res, next) => {
-      res.render('about');
+      res.render('about', {
+         "titles": headings
+      });
    });
 
    app.get('/contact', (req, res, next) => {
-      res.render('contact');
+      res.render('contact', {
+         "titles": headings
+      });
    });
 
 };
