@@ -1,4 +1,16 @@
+const mysql = require('../config/mysql');
+
 module.exports = (app) => {
+
+   app.get('/products',  async (req, res, next) => {
+      let db = await mysql.connect();
+      let [products] = await db.execute('SELECT * FROM products');
+      db.end();
+
+      res.render('products', {
+         "products": products,
+      });
+   });
 
    let headings = [
       {
