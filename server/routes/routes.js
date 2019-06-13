@@ -2,64 +2,53 @@ const mysql = require('../config/mysql');
 
 module.exports = (app) => {
 
-   app.get('/products',  async (req, res, next) => {
+   app.get('/', async (req, res, next) => {
       let db = await mysql.connect();
-      let [products] = await db.execute('SELECT * FROM products');
+      let [categories] = await db.execute('SELECT * FROM categories');
       db.end();
 
-      res.render('products', {
-         "products": products,
-      });
-   });
-
-   let headings = [
-      {
-         "name": "FINANCE"
-      },
-      {
-         "name": "POLITICS"
-      },
-      {
-         "name": "HEALTH"
-      },
-      {
-         "name": "FINANCE"
-      },
-      {
-         "name": "TRAVEL"
-      },
-      {
-         "name": "POLITICS"
-      }
-   ]
-
-   app.get('/', (req, res, next) => {
       res.render('home', {
-         "titles": headings
+         "categories": categories
       });
    });
 
-   app.get('/catagories', (req, res, next) => {
-      res.render('catagories-post', {
-         "titles": headings
+   app.get('/catagories', async (req, res, next) => {
+      let db = await mysql.connect();
+      let [categories] = await db.execute('SELECT * FROM categories');
+      db.end();
+
+      res.render('categories-post', {
+         "categories": categories
       });
    });
 
-   app.get('/single-post', (req, res, next) => {
+   app.get('/single-post', async (req, res, next) => {
+      let db = await mysql.connect();
+      let [categories] = await db.execute('SELECT * FROM categories');
+      db.end();
+
       res.render('single-post', {
-         "titles": headings
+         "categories": categories
       });
    });
 
-   app.get('/about', (req, res, next) => {
+   app.get('/about', async (req, res, next) => {
+      let db = await mysql.connect();
+      let [categories] = await db.execute('SELECT * FROM categories');
+      db.end();
+
       res.render('about', {
-         "titles": headings
+         "categories": categories
       });
    });
 
-   app.get('/contact', (req, res, next) => {
+   app.get('/contact', async (req, res, next) => {
+      let db = await mysql.connect();
+      let [categories] = await db.execute('SELECT * FROM categories');
+      db.end();
+
       res.render('contact', {
-         "titles": headings
+         "categories": categories
       });
    });
 
