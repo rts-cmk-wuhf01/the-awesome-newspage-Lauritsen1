@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2019 at 01:10 PM
+-- Generation Time: Jun 14, 2019 at 12:46 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -53,6 +53,16 @@ CREATE TABLE `authors` (
   `author_about` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `authors`
+--
+
+INSERT INTO `authors` (`author_id`, `author_name`, `author_image`, `author_title`, `author_about`) VALUES
+(1, 'Anders Jensen', 't1.jpg', 'CEO', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus eveniet atque harum voluptas obcaecati quasi molestiae nobis consequuntur illum.'),
+(2, 'Kristine Jensen', 't2.jpg', 'COO', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus eveniet atque harum voluptas obcaecati quasi molestiae nobis consequuntur illum.'),
+(3, 'Trine Andersen', 't3.jpg', 'Journalist', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus eveniet atque harum voluptas obcaecati quasi molestiae nobis consequuntur illum.'),
+(4, 'Andreas Rasmussen', 't4.jpg', 'Journalist', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus eveniet atque harum voluptas obcaecati quasi molestiae nobis consequuntur illum.');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +73,16 @@ CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
   `category_title` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`category_id`, `category_title`) VALUES
+(1, 'Politics'),
+(2, 'Business'),
+(3, 'Technology'),
+(4, 'Health');
 
 -- --------------------------------------------------------
 
@@ -91,6 +111,13 @@ CREATE TABLE `site_info` (
   `site_info_phone` varchar(32) NOT NULL,
   `site_info_url` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `site_info`
+--
+
+INSERT INTO `site_info` (`site_info_id`, `site_info_title`, `site_info_email`, `site_info_phone`, `site_info_url`) VALUES
+(1, '', 'contact@youremail.com', '+43 5278 2883 884', 'www.yoursitename.com');
 
 -- --------------------------------------------------------
 
@@ -179,13 +206,13 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -197,7 +224,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `site_info`
 --
 ALTER TABLE `site_info`
-  MODIFY `site_info_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `site_info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
