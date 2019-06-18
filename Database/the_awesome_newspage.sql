@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2019 at 12:46 PM
+-- Generation Time: Jun 18, 2019 at 03:01 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -31,7 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `articles` (
   `article_id` int(11) NOT NULL,
   `article_title` varchar(128) NOT NULL,
-  `article_text` varchar(3000) NOT NULL,
+  `article_content` varchar(3000) NOT NULL,
+  `article_summary` varchar(750) NOT NULL,
   `article_image` varchar(128) NOT NULL,
   `article_postdate` datetime NOT NULL,
   `article_likes` int(11) NOT NULL,
