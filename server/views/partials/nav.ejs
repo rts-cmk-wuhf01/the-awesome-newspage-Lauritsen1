@@ -85,7 +85,7 @@
 			</div>
 		</li>
 		<% categories.forEach(category => { %>
-		<li><a href="#"><%= category.category_title %></a></li>
+		<li><a href="/category/<%= category.category_id %>"><%= category.category_title %></a></li>
 		<% }); %>
 
 		<li><a href="/contact">Contact</a></li>
