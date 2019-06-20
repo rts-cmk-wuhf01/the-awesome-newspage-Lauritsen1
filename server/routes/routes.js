@@ -64,4 +64,30 @@ module.exports = (app) => {
       });
    });
 
+// ===================================================
+// Test
+
+   // app.get('/fisk', async (req, res, next) => {
+
+   //    res.send("Her har i en fisk");
+   // });
+
+   // app.get('/fisk', async (req, res, next) => {
+
+   //    res.render('fisk', {
+   //       "fisk": "Her har i en ordenlig fisk"
+   //    });
+   // });
+
+   app.get('/fisk/:antal', async (req, res, next) => {
+
+      let fiskData = {
+         amount: req.params.antal
+      }
+
+      res.render('fisk', {
+         "fisk": fiskData
+      });
+   });
+
 };
