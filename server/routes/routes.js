@@ -79,9 +79,21 @@ module.exports = (app) => {
    //    });
    // });
 
-   app.get('/fisk/:antal', async (req, res, next) => {
+   // app.get('/fisk/:antal', async (req, res, next) => {
+
+   //    let fiskData = {
+   //       amount: req.params.antal
+   //    }
+
+   //    res.render('fisk', {
+   //       "fisk": fiskData
+   //    });
+   // });
+
+   app.get('/fisk/:antal/:type', async (req, res, next) => {
 
       let fiskData = {
+         type: req.params.type,
          amount: req.params.antal
       }
 
